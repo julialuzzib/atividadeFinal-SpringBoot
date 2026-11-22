@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="relatorio_locacoes" pageWidth="842" pageHeight="595" orientation="Landscape"
+              whenNoDataType="NoDataSection"
+              columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+    <field name="nomeCliente" class="java.lang.String"/>
+    <field name="codigoBicicleta" class="java.lang.String"/>
+    <field name="dataRetirada" class="java.lang.String"/>
+    <field name="dataDevolucao" class="java.lang.String"/>
+    <field name="duracao" class="java.lang.String"/>
+    <field name="status" class="java.lang.String"/>
+    <title>
+        <band height="45">
+            <staticText>
+                <reportElement x="0" y="0" width="802" height="30"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="18" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Relatório de Locações e Devoluções]]></text>
+            </staticText>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="26">
+            <staticText><reportElement mode="Opaque" backcolor="#D9EAF7" x="0" y="0" width="190" height="26"/><box><pen lineWidth="0.5"/></box><textElement verticalAlignment="Middle"><font isBold="true"/></textElement><text><![CDATA[Cliente]]></text></staticText>
+            <staticText><reportElement mode="Opaque" backcolor="#D9EAF7" x="190" y="0" width="90" height="26"/><box><pen lineWidth="0.5"/></box><textElement verticalAlignment="Middle"><font isBold="true"/></textElement><text><![CDATA[Bicicleta]]></text></staticText>
+            <staticText><reportElement mode="Opaque" backcolor="#D9EAF7" x="280" y="0" width="140" height="26"/><box><pen lineWidth="0.5"/></box><textElement verticalAlignment="Middle"><font isBold="true"/></textElement><text><![CDATA[Retirada]]></text></staticText>
+            <staticText><reportElement mode="Opaque" backcolor="#D9EAF7" x="420" y="0" width="140" height="26"/><box><pen lineWidth="0.5"/></box><textElement verticalAlignment="Middle"><font isBold="true"/></textElement><text><![CDATA[Devolução]]></text></staticText>
+            <staticText><reportElement mode="Opaque" backcolor="#D9EAF7" x="560" y="0" width="120" height="26"/><box><pen lineWidth="0.5"/></box><textElement verticalAlignment="Middle"><font isBold="true"/></textElement><text><![CDATA[Duração]]></text></staticText>
+            <staticText><reportElement mode="Opaque" backcolor="#D9EAF7" x="680" y="0" width="122" height="26"/><box><pen lineWidth="0.5"/></box><textElement verticalAlignment="Middle"><font isBold="true"/></textElement><text><![CDATA[Status]]></text></staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="24">
+            <textField><reportElement x="0" y="0" width="190" height="24"/><box><pen lineWidth="0.5"/></box><textElement verticalAlignment="Middle"/><textFieldExpression><![CDATA[$F{nomeCliente}]]></textFieldExpression></textField>
+            <textField><reportElement x="190" y="0" width="90" height="24"/><box><pen lineWidth="0.5"/></box><textElement verticalAlignment="Middle"/><textFieldExpression><![CDATA[$F{codigoBicicleta}]]></textFieldExpression></textField>
+            <textField><reportElement x="280" y="0" width="140" height="24"/><box><pen lineWidth="0.5"/></box><textElement verticalAlignment="Middle"/><textFieldExpression><![CDATA[$F{dataRetirada}]]></textFieldExpression></textField>
+            <textField><reportElement x="420" y="0" width="140" height="24"/><box><pen lineWidth="0.5"/></box><textElement verticalAlignment="Middle"/><textFieldExpression><![CDATA[$F{dataDevolucao}]]></textFieldExpression></textField>
+            <textField><reportElement x="560" y="0" width="120" height="24"/><box><pen lineWidth="0.5"/></box><textElement verticalAlignment="Middle"/><textFieldExpression><![CDATA[$F{duracao}]]></textFieldExpression></textField>
+            <textField><reportElement x="680" y="0" width="122" height="24"/><box><pen lineWidth="0.5"/></box><textElement verticalAlignment="Middle"/><textFieldExpression><![CDATA[$F{status}]]></textFieldExpression></textField>
+        </band>
+    </detail>
+    <noData>
+        <band height="30">
+            <staticText><reportElement x="0" y="0" width="802" height="30"/><textElement textAlignment="Center" verticalAlignment="Middle"/><text><![CDATA[Nenhuma locação registrada.]]></text></staticText>
+        </band>
+    </noData>
+</jasperReport>
